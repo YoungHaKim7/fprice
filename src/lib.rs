@@ -2,10 +2,15 @@
 //! # 3자리 숫자마다 콤마(,) 찍어주는 api
 //!
 //! # Example
-//! ```
+//! ```rs
 //! let int = 123456778;
 //! let a = fprice::fmt_num_i64_str(int);
 //! println!("{}", a);
+//! ```
+//!
+//! # Result
+//! ```bash
+//! 123,456,778
 //! ```
 
 pub fn fmt_num_i32_str(number: i32) -> String {
@@ -154,6 +159,9 @@ mod tests {
     #[test]
     fn i64_string() {
         assert_eq!(fmt_num_i64_str(12345), "12,345");
+        let int = 123456778;
+        let a = fmt_num_i64_str(int);
+        println!("{}", a);
     }
 
     // #[test]
